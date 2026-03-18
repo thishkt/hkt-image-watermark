@@ -78,57 +78,6 @@ npm run preview
 
 3. 在 GitHub 專案設定中，前往 Settings > Pages，確認 Source 設定為 `gh-pages` 分支。
 
-### 方法二：使用 GitHub Actions
-
-1. 在專案根目錄建立 `.github/workflows/deploy.yml` 檔案：
-
-   ```yaml
-   name: Deploy to GitHub Pages
-
-   on:
-     push:
-       branches: [main]
-
-   permissions:
-     contents: read
-     pages: write
-     id-token: write
-
-   jobs:
-     build-and-deploy:
-       runs-on: ubuntu-latest
-       steps:
-         - name: Checkout
-           uses: actions/checkout@v4
-
-         - name: Setup Node.js
-           uses: actions/setup-node@v4
-           with:
-             node-version: '20'
-             cache: 'npm'
-
-         - name: Install dependencies
-           run: npm ci
-
-         - name: Build
-           run: npm run build
-
-         - name: Setup Pages
-           uses: actions/configure-pages@v4
-
-         - name: Upload artifact
-           uses: actions/upload-pages-artifact@v3
-           with:
-             path: './dist'
-
-         - name: Deploy to GitHub Pages
-           uses: actions/deploy-pages@v4
-   ```
-
-2. 在 GitHub 專案設定中，前往 Settings > Pages，將 Source 設定為 `GitHub Actions`。
-
-3. 將變更推送到 `main` 分支，GitHub Actions 會自動建置並部署。
-
 ## 使用說明
 
 1. **上傳圖片** - 點擊或拖放圖片到上傳區域
