@@ -152,7 +152,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <ImageIcon className="w-6 h-6 text-indigo-600" />
-            <h1 className="text-xl font-bold text-gray-900">線上浮水印產生器</h1>
+            <h1 className="text-xl font-bold text-gray-900">HKT線上浮水印產生器</h1>
           </div>
         </div>
       </header>
